@@ -8,5 +8,5 @@ interface Props {
 }
 
 export const BlinkLink = ({ ...props }: Props) => {
-    return <Link href={props.href} className="text-[#aaa]" style={{ color: props.active ? '#333' : '', transition: 'all 0.5s' }}>{props.children}</Link>
+    return <Link href={props.href} className={`text-[#aaa] hover:text-[#333] transition-all duration-300`} style={{ color: props.active ? '#333' : '' }}>{props.children}</Link>
 }
