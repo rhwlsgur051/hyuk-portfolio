@@ -10,7 +10,7 @@ export const Header = () => {
     { href: "/skills", title: "Skills" }
   ];
 
-  return <nav className="px-6 py-4 bg-[#ffffff] flex font-bold text-2xl justify-between sticky w-full top-0 z-10 border-b-[1px] border-[#ddd]">
+  return <nav className="px-6 py-4 bg-[#ffffff] flex justify-center font-bold text-2xl sticky w-full top-0 z-10 border-b-[1px] border-[#ddd]">
     <div className="flex gap-8 max-md:hidden">
       {
         menus.map(menu => (
