@@ -1,4 +1,7 @@
-export default () => {
+'use client'
+import Image from "next/image"
+
+export default function CareerPage() {
     return <div className="flex justify-center">
         <div className="flex flex-col gap-4">
             <div className="flex justify-center gap-16 border-1">
@@ -17,11 +20,16 @@ export default () => {
                     </div>
                 </div>
                 <div>
-                    <ul className="list-disc">
-                        <li>Tesseract Cube</li>
+                    <ul>
+                        <li>
+                            <div className="flex items-center gap-1 cursor-pointer group">
+                                <Image width={16} height={16} src="/right-arrow.png" alt="right arrow" className="group-hover:w-[20px] transition-all duration-200" />
+                                테서랙트 큐브
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </div >
 }

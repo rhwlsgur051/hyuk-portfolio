@@ -1,7 +1,7 @@
 // import { CircledLink } from "@/components/atoms/circled-link";
 import Image from "next/image";
 
-export default function Main() {
+export default function MainPage() {
   // const circledLinks = [
   //   { href: "/career", title: "Career", bgColor: "bg-[#4e9f4e]", textColor: "text-[#fff]" },
   //   { href: "/skills", title: "Skills", bgColor: "bg-[#e7af45]", textColor: "text-[#fff]" }
