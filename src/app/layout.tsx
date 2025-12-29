@@ -8,7 +8,7 @@ import { ModalContainer } from "@/components/modals";
 const NotoSans = Noto_Sans();
 
 export const metadata: Metadata = {
-  title: "고진혁 이력서",
+  title: "고진혁 포트폴리오",
   description: "6년차 프론트엔드 개발자입니다.",
 };
 
@@ -20,14 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReduxProvider>
-        <body
-          className={`${NotoSans.className} antialiased text-lg font-[500]`}
-        >
-          <MainLayout>
-            {children}
-          </MainLayout>
-          <ModalContainer />
-        </body>
+          <body
+            className={`${NotoSans.className} antialiased text-sm font-[500]`}
+          >
+            <MainLayout>
+              {children}
+            </MainLayout>
+            <ModalContainer />
+          </body>
       </ReduxProvider>
     </html>
   );
