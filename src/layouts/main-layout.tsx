@@ -1,17 +1,10 @@
 'use client';
-import { Header } from "../molecules/header";
+import { Header } from "../components/molecules/header";
 import {
-    Modal,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-    useDisclosure,
     HeroUIProvider
 } from "@heroui/react";
 
 export const MainLayout = ({ children }: { children: React.ReactNode }) => {
-    const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return <>
         <HeroUIProvider>
