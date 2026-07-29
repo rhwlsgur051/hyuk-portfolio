@@ -51,7 +51,7 @@ const projects: Project[] = [
 export const ProjectsWrapper = () => {
   return (
     <CustomContainer>
-      <ContainerTitle number="04" title="Projects" />
+      <ContainerTitle number="05" title="Projects" />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.title} project={project} />

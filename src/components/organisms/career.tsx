@@ -15,7 +15,7 @@ const career = {
 export const CareerWrapper = () => {
   return (
     <CustomContainer>
-      <ContainerTitle number="03" title="Career" />
+      <ContainerTitle number="04" title="Career" />
       <div className="relative pt-6">
         {/* timeline line */}
         <div className="absolute left-0 right-0 top-[11px] h-px bg-[#3B82F6]/60" />

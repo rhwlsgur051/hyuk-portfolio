@@ -27,7 +27,7 @@ const skills: Skill[] = [
 export const SkillsWrapper = () => {
   return (
     <CustomContainer>
-      <ContainerTitle number="02" title="Skills" />
+      <ContainerTitle number="03" title="Skills" />
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <SkillBadge key={skill.name} {...skill} />

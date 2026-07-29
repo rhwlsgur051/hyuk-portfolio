@@ -6,7 +6,7 @@ export const ContainerTitle = ({ number, title }: { number: string, title: strin
     text-[#3B82F6]
     mb-6 md:mb-8">
         <div className="flex gap-4">
-            <div className="bg-[#111C35] rounded-md px-[6px]">{number}</div>
+            <div className="text-[#2f4371]">{number}</div>
             <div>{title}</div>
         </div>
     </div>

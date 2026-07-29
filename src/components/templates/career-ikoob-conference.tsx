@@ -1,49 +1,91 @@
 export const CareerIkoobConference = () => {
-    return <div>
-        <div className="p-2 gap-3 flex flex-col">
-            <div>
-                <div><span className="font-bold">아이쿱 컨퍼런스</span> | 대규모 온라인 학술·국제 컨퍼런스 플랫폼</div>
-                <div>개발 기간: 2023.09 ~ 2024.04 (8개월)</div>
-                <div>사이트: <a href="https://tesseractors.com" target="_blank" className="text-blue-500 underline hover:text-blue-800 transition-all duration-500">https://tesseractors.com</a></div>
-            </div>
-            <div>
-                <div>역할: 프론트엔드 개발 리드 (팀장)</div>
-                <ul className="list-disc list-inside my-1">
-                    <li>프론트엔드 전반 설계 및 개발</li>
-                    <li>개발 문서 작성 및 BM개발2팀 일정·협업 관리</li>
-                    <li>핵심 기술: Next.js · HLS · SSR · 결제</li>
-                </ul>
-            </div>
-            <div>
-                <div>기술 스택</div>
-                <ul className="list-disc list-inside my-1">
-                    <li>Frontend: Next.js, React, TypeScript, TanStack Query, TailwindCSS</li>
-                    <li>Media / Realtime: HLS.js, Socket.IO</li>
-                    <li>Infra: AWS (EC2, Amplify)</li>
-                </ul>
-            </div>
-            <div>
-                <div>역할/의사결정/과정</div>
-                <ul className="list-disc list-inside my-1">
-                    <li>프론트엔드 개발 리드로서 일정 관리 및 타 팀(기획, 디자인)과의 협업 주도</li>
-                    <li>AWS Amplify를 활용한 테스트 환경 구축으로 QA 사이클 단축</li>
-                    <li>EC2 기반 SSR 웹 서버 배포를 통해 Next.js 서버사이드 렌더링 안정화</li>
-                </ul>
-            </div>
-            <div>
-                <div>기술적 성과</div>
-                <ul className="list-disc list-inside my-1">
-                    <li>HLS.js 기반 스트리밍 재생 구현으로 유료 강의 영상 원본 URL 은닉 및 보안 강화</li>
-                    <li>Next.js Middleware를 활용해 PC / 모바일 도메인 분기 (m.tesseractors.com)</li>
-                    <li>PC·모바일 코드 분리 운영으로 장애 발생 시 빠른 대응 가능</li>
-                    <li>SSR 환경에서 API 데이터 은닉 처리로 보안성 향상</li>
-                    <li>Refresh Token 인증 모듈 구현으로 사용자 인증 보안 개선</li>
-                </ul>
-            </div>
-            <div>
-                <div>팀 구성</div>
-                <div>백엔드 1, 프론트엔드 2, 퍼블리셔 1, UX/UI 디자이너 1</div>
-            </div>
-        </div>
-    </div>
-}
+    return (
+        <div>
+            <div className="flex flex-col gap-3 p-2">
+                <div>
+                    <div>
+                        <span className="font-bold">아이쿱 컨퍼런스</span> | 대규모 온라인
+                        학술·국제 컨퍼런스 플랫폼
+                    </div>
+                    <div className="font-thin">서비스 기간: 2018 ~ 2024</div>
+                    <div className="font-thin">기사: 국내 첫 온라인 학술대회 개최 <a href="https://www.monews.co.kr/news/articleView.html?idxno=210451" target="_blank" className="font-normal text-blue-500 underline hover:text-blue-800 transition-all duration-500">기사 링크</a></div>
+                </div>
+
+                <div>
+                    <div className="font-bold">역할: 풀스택 개발 및 운영</div>
+                    <ul className="my-1 list-inside list-disc font-thin">
+                        <li>
+                            복잡하게 얽힌 기존 로직을 컴포넌트 단위로 재설계
+                        </li>
+                        <li>
+                            React 사내 표준 도입을 추진해 신규 기능 개발 생산성 향상
+                        </li>
+                        <li>
+                            서비스 출시 전 부하 테스트(JMeter)를 통해 트래픽 병목 사전 분석
+                        </li>
+                        <li>
+                            AWS ECS 기반 컨테이너 환경에서 확장성 및 안정성 검증
+                        </li>
+                        <li>
+                            행사 당일 실시간 모니터링 및 트래픽·장애 대응 담당
+                        </li>
+                        <li>
+                            백엔드(Node.js) 개발에도 직접 참여
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div>기술 스택</div>
+                    <ul className="font-thin my-1 list-inside list-disc">
+                        <li>Frontend: React, Angular, TypeScript, TanStack Query</li>
+                        <li>Realtime / Media: Socket.IO, Vimeo</li>
+                        <li>Backend: Node.js, MongoDB</li>
+                        <li>Infra / Test: AWS(ECS), JMeter</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div>기술적 성과</div>
+                    <ul className="my-1 list-inside list-disc font-thin">
+                        <li>
+                            Vimeo 기반 영상 저장·재생 구조를 설계해 대규모 동시 시청 환경에서도
+                            안정적인 스트리밍 제공
+                        </li>
+                        <li>
+                            사용자 시청 기록, 광고 클릭, 전시 데이터 조회 등 행동 데이터 산출
+                            로직 구현
+                        </li>
+                        <li>고객사의 행사 사후 분석 및 리포트 제공 정확도 향상에 기여</li>
+                        <li>
+                            다수의 의료·국제 학술 행사 운영 경험을 통해 대규모 이벤트형 서비스
+                            안정성 확보
+                        </li>
+                        <li>
+                            Angular → React 리팩토링 개발을 주도하여 고객사 납품까지의 개발
+                            기간을 기존 최소 1개월 → 약 2주로 단축
+                        </li>
+                        <li>
+                            관리자 페이지 리팩토링을 통해 행사 민원 처리 속도 80% 향상
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div>대표 운영 행사</div>
+                    <ul className="my-1 list-inside list-disc font-thin">
+                        <li>삼성서울병원 국제 심포지엄</li>
+                        <li>ICA 2021 세계협동조합대회</li>
+                        <li>대한당뇨병학회 학술대회</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div>팀 구성 및 기여도</div>
+                    <div className="font-thin">백엔드 1명, 프론트엔드 1명, 퍼블리셔 1명</div>
+                    <div className="font-thin">기여도: 개발 50%</div>
+                </div>
+            </div >
+        </div >
+    );
+};
