@@ -25,12 +25,13 @@ const projects: Project[] = [
     description: "의료인 대상 온라인 강의 플랫폼",
     techs: ["Next.js", "React", "TypeScript", "TanStack Query", "AWS"],
     bullets: [
-      "담당: 프로젝트 관리 및 프론트엔드 리드",
-      "회사 최초 서비스형 플랫폼 구축으로 신규 수익 모델 기여",
+      "프론트엔드 개발 리드 · SSR 아키텍처 설계",
+      "HLS 스트리밍·Refresh Token으로 보안 강화",
+      "회사 최초 서비스형 플랫폼으로 신규 수익 모델 기여",
     ],
     imageLabel: "Tesseract Cube",
     imageSrc: "/projects/tesseract-cube.png",
-    modalTitle: "테서랙트 큐브",
+    modalTitle: "📌 프로젝트 소개",
     modalComponent: <CareerTesseractCube />,
   },
   {
@@ -38,12 +39,13 @@ const projects: Project[] = [
     description: "대규모 온라인 학술/국제 컨퍼런스 플랫폼",
     techs: ["React", "Angular", "Node.js", "MongoDB", "Vimeo"],
     bullets: [
-      "담당: Angular → React 전환 리드",
-      "관리자 페이지 리팩토링으로 민원 처리 응답속도 80% 개선",
+      "Angular → React 전환 리드 · 납품 기간 약 2주 단축",
+      "관리자 페이지 리팩토링으로 민원 처리 속도 80% 개선",
+      "대규모 행사 스트리밍·부하 테스트·장애 대응 운영",
     ],
     imageLabel: "iKooB Conference",
     imageSrc: "/projects/ikoob-conference.png",
-    modalTitle: "아이쿱 컨퍼런스",
+    modalTitle: "📌 프로젝트 소개",
     modalComponent: <CareerIkoobConference />,
   },
 ];

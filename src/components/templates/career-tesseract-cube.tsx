@@ -1,49 +1,114 @@
+"use client";
+
+import { ScreenPreview } from "../molecules/screen-preview";
+
+const tesseractScreenshots = [
+  {
+    src: encodeURI("/projects/screenshots/tesseract/tesseractors.com_ (1).png"),
+    alt: "테서랙트 큐브 메인",
+  },
+  {
+    src: encodeURI("/projects/screenshots/tesseract/tesseractors.com_ (2).png"),
+    alt: "테서랙트 큐브 화면",
+  },
+  {
+    src: "/projects/screenshots/tesseract/tesseractors.com_lectures.png",
+    alt: "테서랙트 큐브 강의 목록",
+  },
+  {
+    src: encodeURI(
+      "/projects/screenshots/tesseract/tesseractors.com_lectures (1).png",
+    ),
+    alt: "테서랙트 큐브 강의 상세",
+  },
+];
+
 export const CareerTesseractCube = () => {
-    return <div>
-        <div className="p-2 gap-3 flex flex-col">
-            <div>
-                <div><span className="font-bold">테서랙트 큐브</span> | 의료인 대상 온라인 강의 플랫폼</div>
-                <div className="font-thin">개발 기간: 2023.09 ~ 2024.04 (8개월)</div>
-                <div>사이트: <a href="https://tesseractors.com" target="_blank" className="text-blue-500 underline hover:text-blue-800 transition-all duration-500">https://tesseractors.com</a></div>
-            </div>
-            <div>
-                <div>역할: 프론트엔드 개발 리드</div>
-                <ul className="list-disc list-inside my-1 font-thin">
-                    <li>프론트엔드 전반 설계 및 개발</li>
-                    <li>개발 문서 작성 및 BM개발2팀 일정·협업 관리</li>
-                    <li>핵심 기술: Next.js · HLS · SSR · 결제</li>
-                </ul>
-            </div>
-            <div>
-                <div>기술 스택</div>
-                <ul className="list-disc list-inside my-1 font-thin">
-                    <li>Frontend: Next.js, React, TypeScript, TanStack Query, TailwindCSS</li>
-                    <li>Media / Realtime: HLS.js, Socket.IO</li>
-                    <li>Infra: AWS (EC2, Amplify)</li>
-                </ul>
-            </div>
-            <div>
-                <div>역할/의사결정/과정</div>
-                <ul className="list-disc list-inside my-1 font-thin">
-                    <li>프론트엔드 개발 리드로서 일정 관리 및 타 팀(기획, 디자인)과의 협업 주도</li>
-                    <li>AWS Amplify를 활용한 테스트 환경 구축으로 QA 사이클 단축</li>
-                    <li>EC2 기반 SSR 웹 서버 배포를 통해 Next.js 서버사이드 렌더링 안정화</li>
-                </ul>
-            </div>
-            <div>
-                <div>기술적 성과</div>
-                <ul className="list-disc list-inside my-1 font-thin">
-                    <li>HLS.js 기반 스트리밍 재생 구현으로 유료 강의 영상 원본 URL 은닉 및 보안 강화</li>
-                    <li>Next.js Middleware를 활용해 PC / 모바일 도메인 분기 (m.tesseractors.com)</li>
-                    <li>PC·모바일 코드 분리 운영으로 장애 발생 시 빠른 대응 가능</li>
-                    <li>SSR 환경에서 API 데이터 은닉 처리로 보안성 향상</li>
-                    <li>Refresh Token 인증 모듈 구현으로 사용자 인증 보안 개선</li>
-                </ul>
-            </div>
-            <div>
-                <div>팀 구성</div>
-                <div className="font-thin">백엔드 1, 프론트엔드 2, 퍼블리셔 1, UX/UI 디자이너 1</div>
-            </div>
+  return (
+    <div>
+      <div className="flex flex-col gap-3 p-2">
+        <div>
+          <div>
+            <span className="font-bold">테서랙트 큐브</span> | 의료인 대상 온라인
+            강의 플랫폼
+          </div>
+          <div className="font-thin">개발 기간: 2023.09 ~ 2024.04 (8개월)</div>
+          <div className="font-thin">
+            팀 구성: 프론트엔드 2 / 백엔드 1 / 퍼블리셔 1 / 디자이너 1
+          </div>
+          <div>
+            사이트:{" "}
+            <a
+              href="https://tesseractors.com"
+              target="_blank"
+              className="text-blue-500 underline transition-all duration-500 hover:text-blue-800"
+            >
+              https://tesseractors.com
+            </a>
+          </div>
         </div>
+        <div>
+          <div>담당 업무</div>
+          <ul className="my-1 list-inside list-disc font-thin">
+            <li>프론트엔드 개발 리드</li>
+            <li>프론트엔드 아키텍처 설계 및 구현</li>
+            <li>공통 컴포넌트 및 페이지 개발</li>
+            <li>Next.js 기반 SSR 환경 구축</li>
+          </ul>
+        </div>
+        <div>
+          <div>핵심 기술</div>
+          <ul className="my-1 list-inside list-disc font-thin">
+            <li>
+              Frontend
+              <ul className="list-inside list-disc pl-4">
+                <li>Next.js</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>TanStack Query</li>
+                <li>TailwindCSS</li>
+              </ul>
+            </li>
+            <li>
+              Infra / Media / Realtime
+              <ul className="list-inside list-disc pl-4">
+                <li>AWS (EC2, Amplify)</li>
+                <li>HLS.js</li>
+                <li>Socket.IO</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div>기술적 성과</div>
+          <ul className="my-1 list-inside list-disc font-thin">
+            <li>
+              HLS 기반 스트리밍 플레이어를 구현하여 영상 URL 은닉 및 보안 강화
+            </li>
+            <li>Next.js Middleware를 활용해 PC / 모바일 도메인 분리 운영</li>
+            <li>
+              SSR 환경에서 API 연동 구조를 개선하여 초기 렌더링 안정성 확보
+            </li>
+            <li>
+              Refresh Token 기반 인증 모듈을 구현하여 사용자 인증 보안 개선
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div>주요 의사결정</div>
+          <ul className="my-1 list-inside list-disc font-thin">
+            <li>AWS Amplify를 활용한 테스트 환경을 구축하여 QA 사이클 단축</li>
+            <li>
+              EC2 기반 SSR 서버를 구성하여 안정적인 서버사이드 렌더링 환경 구축
+            </li>
+            <li>
+              PC/모바일 코드를 분리 운영하여 장애 발생 시 빠른 대응이 가능하도록
+              설계
+            </li>
+          </ul>
+        </div>
+        <ScreenPreview images={tesseractScreenshots} />
+      </div>
     </div>
-}
+  );
+};
