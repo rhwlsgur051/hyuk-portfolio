@@ -19,7 +19,7 @@ export const ModalContainer = () => {
 				base: "bg-[#070B17] text-[#fff]",
 				header: "border-b border-white/10 text-[#fff]",
 				body: "text-[#fff]",
-				closeButton: "text-[#fff] hover:bg-white/10 active:bg-white/20",
+				closeButton: "cursor-pointer text-[#fff] hover:bg-white/10 active:bg-white/20",
 			}}
 		>
 			<ModalContent className="bg-[#070B17] text-[#fff]">

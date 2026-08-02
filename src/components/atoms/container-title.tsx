@@ -1,13 +1,6 @@
-export const ContainerTitle = ({ number, title }: { number: string, title: string }) => {
-    return <div
-        className="
-    text-2xl md:text-4xl
-    font-bold
-    text-[#3B82F6]
-    mb-6 md:mb-8">
-        <div className="flex gap-4">
-            <div className="text-[#2f4371]">{number}</div>
-            <div>{title}</div>
-        </div>
+export const ContainerTitle = ({ number, title, className }: { number: string, title: string, className?: string }) => {
+    return <div className={`flex flex-col gap-[16px] mb-[32px] ${className}`}>
+        <div className="font-light text-[24px] text-[rgb(255,255,255,0.5)]">{number}</div>
+        <div className="text-[32px] font-bold">{title}</div>
     </div>
 }

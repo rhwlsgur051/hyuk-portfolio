@@ -1,16 +1,26 @@
 const stats = [
-  { value: "6+", label: "Years" },
-  { value: "10+", label: "Projects" },
-  { value: "100%", label: "Passion" },
+  { value: "6+", label: "경력" },
+  { value: "10+", label: "프로젝트" },
 ];
 
 export const AboutStats = () => {
   return (
-    <div className="grid grid-cols-3 rounded-xl border border-white/10 bg-[#111C35] px-16 py-8">
+    <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-[24px]">
       {stats.map((s) => (
-        <div key={s.label} className="flex flex-col items-center gap-1">
-          <div className="text-3xl font-bold text-[#3B82F6]">{s.value}</div>
-          <div className="text-sm text-[#ccc]">{s.label}</div>
+        <div
+          key={s.label}
+          className="
+            flex h-[120px] w-[140px] flex-col items-center justify-center gap-3
+            sm:h-[140px] sm:w-[170px] sm:gap-5
+            lg:h-[167px] lg:w-[200px] lg:gap-[26px]
+          "
+        >
+          <div className="text-lg font-normal text-[#3E5DB2] sm:text-xl lg:text-[26px]">
+            {s.label}
+          </div>
+          <div className="text-3xl font-bold sm:text-4xl lg:text-[40px]">
+            {s.value}
+          </div>
         </div>
       ))}
     </div>
