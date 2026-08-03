@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'macho-guideline'; // GitHub 레포지토리 이름
+const repoName = 'hyuc-portfolio'; // GitHub 레포지토리 이름
 
 const nextConfig: NextConfig = {
   /* config options here */
