@@ -197,6 +197,75 @@ const projects: Project[] = [
   },
 ];
 
+const ProjectDetail = ({ project }: { project: Project }) => (
+  <div className="flex flex-col gap-5 sm:gap-8">
+    <div className="flex flex-col gap-3 sm:gap-4">
+      <img
+        src={project.logoSrc}
+        alt={project.title}
+        className="h-7 w-auto self-start sm:h-8 md:h-10"
+      />
+      <div className="flex flex-col gap-1 text-base sm:flex-row sm:flex-wrap sm:gap-x-4 sm:gap-y-1 sm:text-xl md:text-[32px]">
+        <span className="font-bold">{project.subTitle1}</span>
+        <span className="font-light text-white/90 sm:text-inherit">
+          {project.subTitle2}
+        </span>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {project.techs.map((tech) =>
+          skills[tech] ? (
+            <SkillBadge key={tech} {...skills[tech]} />
+          ) : (
+            <span
+              key={tech}
+              className="inline-flex items-center rounded-lg border border-white/10 bg-[#111C35] px-3 py-2 text-sm text-white"
+            >
+              {tech}
+            </span>
+          ),
+        )}
+      </div>
+    </div>
+
+    <div className="flex flex-col gap-2 rounded-sm bg-[#070B17] p-3 text-sm sm:gap-3 sm:p-[18px] sm:text-base md:text-[18px]">
+      {project.summary.map((row) => (
+        <div key={row.label} className="flex gap-3 font-light sm:gap-8">
+          <div className="w-16 shrink-0 sm:w-20">{row.label}</div>
+          <div className="min-w-0 break-words">{row.value}</div>
+        </div>
+      ))}
+    </div>
+
+    {project.sections.map((section) => (
+      <div key={section.title} className="flex flex-col gap-2">
+        <div className="flex items-baseline justify-between gap-2">
+          <div className="text-base font-bold sm:text-lg md:text-[24px]">
+            {section.title}
+          </div>
+          {section.type === "preview" && (
+            <div className="text-xs text-[#ccc]">클릭 시 확대</div>
+          )}
+        </div>
+        {section.type === "list" ? (
+          <ul className="flex flex-col rounded-sm bg-[#070B17] p-3 sm:p-[18px]">
+            {section.items.map((item) => (
+              <li
+                key={item}
+                className="flex gap-2 text-sm font-light sm:text-base md:text-[18px]"
+              >
+                <span className="mt-[0.55em] size-1.5 shrink-0 rounded-full bg-white/70" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ScreenPreview images={section.images} hideHeader />
+        )}
+      </div>
+    ))}
+  </div>
+);
+
 export const ProjectsSection = () => {
   const [selectedId, setSelectedId] = useState(projects[0].id);
   const selected = projects.find((p) => p.id === selectedId) ?? projects[0];
@@ -205,7 +274,8 @@ export const ProjectsSection = () => {
     <CustomContainer>
       <ContainerTitle number="04" title="Projects" className="mb-6 sm:mb-[48px]" />
 
-      <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
+      {/* md 이상: 썸네일 탭 */}
+      <div className="mb-10 hidden gap-4 md:grid md:grid-cols-2">
         {projects.map((project) => {
           const isSelected = project.id === selectedId;
           return (
@@ -213,10 +283,11 @@ export const ProjectsSection = () => {
               key={project.id}
               type="button"
               onClick={() => setSelectedId(project.id)}
-              className={`relative aspect-[720/529] cursor-pointer overflow-hidden border transition-all ${isSelected
+              className={`group relative aspect-[720/529] cursor-pointer overflow-hidden border transition-all ${
+                isSelected
                   ? "border-[#3B82F6]/50"
                   : "border-white/10 hover:border-white/20"
-                }`}
+              }`}
             >
               <img
                 src={project.thumbnail}
@@ -224,7 +295,7 @@ export const ProjectsSection = () => {
                 className="size-full object-cover object-top"
               />
               {!isSelected && (
-                <div className="absolute inset-0 flex items-center justify-center bg-[#070B17]/88">
+                <div className="absolute inset-0 flex items-center justify-center bg-[#070B17]/88 transition-colors group-hover:bg-[#070B17]/40">
                   <img
                     src={project.overlayLogoSrc ?? project.logoSrc}
                     alt={project.title}
@@ -237,74 +308,16 @@ export const ProjectsSection = () => {
         })}
       </div>
 
-      <div className="mt-6 flex flex-col gap-5 sm:mt-[40px] sm:gap-8">
-        <div className="flex flex-col gap-3 sm:gap-4">
-          <img
-            src={selected.logoSrc}
-            alt={selected.title}
-            className="h-7 w-auto self-start sm:h-8 md:h-10"
-          />
-          <div className="flex flex-col gap-1 text-base sm:flex-row sm:flex-wrap sm:gap-x-4 sm:gap-y-1 sm:text-xl md:text-[32px]">
-            <span className="font-bold">{selected.subTitle1}</span>
-            <span className="font-light text-white/90 sm:text-inherit">
-              {selected.subTitle2}
-            </span>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {selected.techs.map((tech) =>
-              skills[tech] ? (
-                <SkillBadge key={tech} {...skills[tech]} />
-              ) : (
-                <span
-                  key={tech}
-                  className="inline-flex items-center rounded-lg border border-white/10 bg-[#111C35] px-3 py-2 text-sm text-white"
-                >
-                  {tech}
-                </span>
-              ),
-            )}
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2 rounded-sm bg-[#070B17] p-3 text-sm sm:gap-3 sm:p-[18px] sm:text-base md:text-[18px]">
-          {selected.summary.map((row) => (
-            <div
-              key={row.label}
-              className="flex gap-3 font-light sm:gap-8"
-            >
-              <div className="w-16 shrink-0 sm:w-20">{row.label}</div>
-              <div className="min-w-0 break-words">{row.value}</div>
-            </div>
-          ))}
-        </div>
-
-        {selected.sections.map((section) => (
-          <div key={section.title} className="flex flex-col gap-2">
-            <div className="flex items-baseline justify-between gap-2">
-              <div className="text-base font-bold sm:text-lg md:text-[24px]">
-                {section.title}
-              </div>
-              {section.type === "preview" && (
-                <div className="text-xs text-[#ccc]">클릭 시 확대</div>
-              )}
-            </div>
-            {section.type === "list" ? (
-              <ul className="flex flex-col rounded-sm bg-[#070B17] p-3 sm:p-[18px]">
-                {section.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex gap-2 text-sm font-light sm:text-base md:text-[18px]"
-                  >
-                    <span className="mt-[0.55em] size-1.5 shrink-0 rounded-full bg-white/70" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <ScreenPreview images={section.images} hideHeader />
-            )}
-          </div>
+      {/* md 미만: 두 프로젝트 세로 나열 */}
+      <div className="flex flex-col gap-16 md:hidden">
+        {projects.map((project) => (
+          <ProjectDetail key={project.id} project={project} />
         ))}
+      </div>
+
+      {/* md 이상: 선택된 프로젝트만 */}
+      <div className="mt-[40px] hidden md:block">
+        <ProjectDetail project={selected} />
       </div>
     </CustomContainer>
   );

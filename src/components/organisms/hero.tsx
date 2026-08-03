@@ -1,29 +1,28 @@
 export const HeroSection = () => {
   return (
-    <div className="bg-[#070B17]">
+    <div className="overflow-x-hidden bg-[#070B17]">
       <div
         className="
-          relative mx-auto flex min-h-[520px] w-full max-w-[1472px] items-start
-          overflow-hidden px-4 pt-24 pb-12
-          lg:h-[620px] lg:gap-[108px] lg:overflow-visible lg:pt-[120px] lg:pb-[52px]
+          relative mx-auto flex h-[620px] w-full max-w-[1472px] items-start
+          px-4 pt-24 pb-12
+          lg:gap-[108px] lg:pt-[120px] lg:pb-[52px]
         "
       >
         <div
           className="
-            pointer-events-none absolute right-[-60px] top-1/2 z-0
-            w-[min(560px,85vw)] -translate-y-1/2
-            lg:relative lg:right-auto lg:top-auto lg:w-auto lg:translate-y-0 lg:shrink-0
+            pointer-events-none absolute right-[-47px] top-1/2 z-0
+            w-[min(560px,100%)] min-w-[402px] -translate-y-1/2
+            lg:relative lg:right-auto lg:top-auto lg:w-auto lg:min-w-0 lg:translate-y-0 lg:shrink-0
           "
         >
           <img
             src="/images/hero.svg"
             alt=""
-            className="h-auto w-full max-w-none opacity-35 lg:max-w-full lg:opacity-100"
+            className="h-auto w-full min-w-[402px] max-w-none brightness-50 lg:min-w-0 lg:brightness-100"
           />
-          <div className="absolute inset-0 bg-[#070B17]/70 lg:hidden" />
         </div>
 
-        <div className="relative z-10 flex w-full flex-col gap-6 lg:max-w-none lg:gap-[27px]">
+        <div className="relative z-10 flex w-full flex-col gap-[180px] lg:max-w-none lg:gap-[27px]">
           <div className="flex flex-col gap-3 sm:gap-4 lg:gap-[24px]">
             <div className="text-3xl font-light sm:text-4xl lg:text-[48px]">
               Frontend Developer
