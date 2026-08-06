@@ -22,7 +22,7 @@ export const HeroSection = () => {
           />
         </div>
 
-        <div className="relative z-10 flex w-full flex-col gap-[180px] lg:max-w-none lg:gap-[27px]">
+        <div className="flex w-full flex-col z-2 gap-[180px] lg:max-w-none lg:gap-[27px]">
           <div className="flex flex-col gap-3 sm:gap-4 lg:gap-[24px]">
             <div className="text-3xl font-light sm:text-4xl lg:text-[48px]">
               Frontend Developer
