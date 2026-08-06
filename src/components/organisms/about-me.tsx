@@ -4,12 +4,12 @@ import { AboutStats } from "../molecules/about-stats";
 
 export const AboutMeSection = () => {
   return (
-    <section className="relative mt-[26px] h-[620px] overflow-x-hidden">
+    <section className="relative mt-[100px] h-[620px] overflow-x-hidden scroll-mt-[100px]">
       <CustomContainer className="h-full">
-        <div className="relative z-10 flex h-full lg:gap-[100px]">
+        <div className="flex h-full lg:gap-[100px]">
           <div className="w-full max-w-[720px]">
             <ContainerTitle number="01" title="About Me" />
-            <div className="flex flex-col gap-10 sm:gap-14 lg:gap-[80px]">
+            <div className="relative z-5 flex flex-col gap-10 sm:gap-14 lg:gap-[80px]">
               <div className="flex flex-col gap-4 font-light sm:gap-5 lg:gap-[20px]">
                 <div className="text-lg sm:text-xl lg:text-[24px]">
                   사용자 중심의 경험을 기술로 구현합니다.
